@@ -10,6 +10,7 @@ package br.edu.ifrn.peoo.operadores;
  * @author joaon
  */
 public class Operadores {
+
     public static void main(String[] args) {
         int a = 1; //Número um
         int resultado;
@@ -24,17 +25,35 @@ public class Operadores {
         a *= 2; // a = a * 2;
         a /= 3; // a = a / 3;
         System.out.println(a);
-        
+
         //Operadores lógicos
         boolean logico1 = true; //Número um
-        boolean logico2 = false;        
+        boolean logico2 = false;
         System.out.println(logico1 && logico2); //AND
         System.out.println(logico1 || logico2); //OR
         System.out.println(!logico1); //NOT
-        
+
         //Operadores relacionais
+        int valorA = 3;
+        int valorB = 45;
+        if (valorA != valorB) {
+            System.out.println("Valores diferentes");
+        } else {
+            System.out.println("Valores iguais");
+        }
+        boolean testes;
+        testes = valorA == valorB;
+        testes = valorA != valorB;
+        testes = valorA >= valorB;
+        System.out.println(testes);
         
-        
-        
+        //Operador ternário
+        int respostaTernario = 4 > valorA ? 0 : 23;
+        if (4 > valorA){
+            respostaTernario = 0;
+        }
+        else{
+            respostaTernario = 23;
+        }
     }
 }
