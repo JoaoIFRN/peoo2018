@@ -5,7 +5,8 @@
  */
 package br.edu.ifrn.peoo.petshop;
 
-import br.edu.ifrn.peoo.poo.VariaveisInstancia;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,8 +18,29 @@ public class Cliente {
     private String nome;
     private String email;
     private boolean malPagador;
-       
-    public Cliente(){
+    //private Pet [] pets = new Pet[3];
+    //private Pet pets [] = new Pet[3];
+    private List<Pet> pets = new ArrayList();
+         
+    public void adicionarPet(Pet pet){
+        pets.add(pet);
+    }
+    
+    public void removerPet(Pet pet){
+        pets.remove(pet);
+    }
+    
+    public int getNumeroPets(){
+        return pets.size();
+    }
+    
+    public void imprimirListaPets(){
+        for (Pet pet : pets){
+            System.out.println(pet);
+        }
+    }
+    
+    public Cliente(){        
         this.nome = "Nome indefinido";
         this.email = "Email indefinido";
         this.malPagador = false;
@@ -59,6 +81,16 @@ public class Cliente {
         this.malPagador = malPagador;
     }
     
-    
+    /*
+    public int getNumeroPets(){
+        int contador = 0;
+        for (int i = 0; i < pets.length;i++){
+            if (pets[i] != null){
+                contador++;
+            }
+        }
+        return contador;
+    }
+    */
     
 }

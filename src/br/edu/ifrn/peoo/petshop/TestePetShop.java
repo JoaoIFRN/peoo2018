@@ -14,12 +14,14 @@ public class TestePetShop {
         Cliente cliente1 = new Cliente();
         System.out.println(cliente1.getNome());
         
-        Cliente cliente2 = new Cliente("Simon");
+        Cliente cliente2 = new Cliente("João");
         System.out.println(cliente2.getNome());
         
         Cliente cliente3 = new Cliente("Jáfia","jjj@gmail");
         System.out.println(cliente3.getNome());
         
-        Pet pet = new Pet();
+        //cliente2.getPets()[0] = new Pet("Kobe","Pug");
+        
+        //System.out.println(cliente2.getPets()[0].getNome());
     }
 }

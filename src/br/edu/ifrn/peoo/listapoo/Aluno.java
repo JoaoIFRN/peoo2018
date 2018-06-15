@@ -3,30 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifrn.peoo.petshop;
+package br.edu.ifrn.peoo.listapoo;
 
 /**
  *
  * @author joaon
  */
-public class Pet {
+public class Aluno {
     
     private String nome;
-    private String raca;
+    private long matricula;
+    private long cpf;
 
-    @Override
-    public String toString() {
-        return "Pet{" + "nome=" + nome + ", raca=" + raca + '}';
-    }
-    
-    
-
-    public Pet() {
-    }
-
-    public Pet(String nome, String raca) {
+    public Aluno(String nome, long cpf) {
         this.nome = nome;
-        this.raca = raca;
+        this.cpf = cpf;
     }
 
     public String getNome() {
@@ -37,13 +28,22 @@ public class Pet {
         this.nome = nome;
     }
 
-    public String getRaca() {
-        return raca;
+    public long getMatricula() {
+        return matricula;
     }
 
-    public void setRaca(String raca) {
-        this.raca = raca;
+    public void setMatricula(long matricula) {
+        this.matricula = matricula;
     }
+
+    public long getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(long cpf) {
+        this.cpf = cpf;
+    }
+    
     
     
     
