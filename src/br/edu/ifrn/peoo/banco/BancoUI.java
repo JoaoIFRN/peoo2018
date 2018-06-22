@@ -16,10 +16,21 @@ public class BancoUI {
     private Banco banco;
     private Scanner scanner;
     
+    public static void main(String[] args) {
+        new BancoUI().executar();
+    }
+    
+    public void executar(){
+        while(true){
+            exibirMenu();
+            tratarEscolhaMenu();
+        }
+    }
+    
     public BancoUI(){
         this.banco = new Banco(1);
         scanner = new Scanner(System.in);
-    }
+    }  
     
     public void exibirMenu(){
         System.out.println("#### BANCO DO IFRN ####");
@@ -47,6 +58,9 @@ public class BancoUI {
             break;
             case 3:
                 cadastrarConta();
+            break;
+            case 9:
+                System.exit(0);
             break;
         }
     }
