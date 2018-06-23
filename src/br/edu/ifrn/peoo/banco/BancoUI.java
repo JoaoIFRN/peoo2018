@@ -59,10 +59,92 @@ public class BancoUI {
             case 3:
                 cadastrarConta();
             break;
+            case 4:
+                realizarDeposito();
+            break;   
+            case 5:
+                realizarSaque();
+            break;
+            case 6:
+                verSaldo();
+            break;
+            case 7:
+                mudarLimiteConta();
+            break;
+            case 8:
+                cancelarConta();
+            break;
             case 9:
                 System.exit(0);
             break;
         }
+    }
+    
+    public void cancelarConta(){
+        Conta conta = buscarConta();
+        if (conta == null){
+            System.out.println("Conta não encontrada!!!");
+            return;
+        }
+        conta.cancelar();
+    }
+    
+    public void mudarLimiteConta(){
+        Conta conta = buscarConta();
+        if (conta == null){
+            System.out.println("Conta não encontrada!!!");
+            return;
+        }
+        System.out.print("Novo limite: ");
+        double valor = scanner.nextDouble();
+        conta.setLimite(valor);        
+    }
+    
+    public void verSaldo(){
+        Conta conta = buscarConta();
+        if (conta == null){
+            System.out.println("Conta não encontrada!!!");
+            return;
+        }
+        System.out.println("Saldo: " + conta.getSaldo());
+    }
+    
+    public void realizarDeposito(){
+        Conta conta = buscarConta();
+        if (conta == null){
+            System.out.println("Conta não encontrada!!!");
+            return;
+        }
+        System.out.print("Valor: ");
+        double valor = scanner.nextDouble();
+        conta.depositar(valor);
+    }
+    
+    public void realizarSaque(){
+        Conta conta = buscarConta();
+        if (conta == null){
+            System.out.println("Conta não encontrada!!!");
+            return;
+        }
+        System.out.print("Valor: ");
+        double valor = scanner.nextDouble();
+        conta.sacar(valor);
+    }
+    
+    public Conta buscarConta(){
+        Agencia agencia = buscarAgencia();
+        if (agencia == null){
+            System.out.println("AGÊNCIA NÃO ENCONTRADA");
+            return null;
+        }
+        System.out.print("Número da conta: ");
+        int numeroConta = scanner.nextInt();        
+        for (Conta conta : agencia.getContas()){
+            if (conta.getNumero() == numeroConta){
+                return conta;
+            }
+        }
+        return null;
     }
     
     public void cadastrarConta(){
@@ -82,13 +164,13 @@ public class BancoUI {
     public Cliente buscarCliente(Agencia agencia){
         while (true){
             System.out.print("Digite o nome do cliente: ");
-            String nome = scanner.nextLine();
+            String nome = scanner.next();
             Cliente cliente = agencia.buscarCliente(nome);
             if (cliente != null){
                 return cliente;
             }else{
                 System.out.print("Cliente não encontrado, deseja continuar (S/N): ");
-                String escolha = scanner.nextLine();
+                String escolha = scanner.next();
                 if (escolha.toLowerCase().equals("n"))
                     break;
             }                
@@ -104,11 +186,11 @@ public class BancoUI {
     
     public void cadastrarCliente(){
         System.out.print("Digite o nome do cliente: ");
-        String nome = scanner.nextLine();
+        String nome = scanner.next();
         System.out.print("Digite o email do cliente: ");
-        String email = scanner.nextLine();
+        String email = scanner.next();
         System.out.print("Digite o telefone do cliente: ");
-        String telefone = scanner.nextLine();
+        String telefone = scanner.next();
         Cliente cliente = new Cliente();
         cliente.setNome(nome);
         cliente.setEmail(email);
@@ -127,7 +209,7 @@ public class BancoUI {
                 return agencia;
             }else{
                 System.out.print("Agência não encontrada, deseja continuar (S/N): ");
-                String escolha = scanner.nextLine();
+                String escolha = scanner.next();
                 if (escolha.toLowerCase().equals("n"))
                     break;
             }            
