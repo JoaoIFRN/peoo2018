@@ -13,22 +13,32 @@ import java.util.ArrayList;
  */
 public class Principal {
     public static void main(String[] args) {
-        Veiculo veiculo1 = new Carro();
-        Carro carro = (Carro) veiculo1;
+        Veiculo veiculo;
+        veiculo = new Carro();
+        Carro carro = (Carro) veiculo;
         carro.buzinar();
-        ((Carro)veiculo1).buzinar();
+        ((Carro) veiculo).buzinar();
         
         ArrayList<Veiculo> veiculos = new ArrayList();
         veiculos.add(new Carro());
         veiculos.add(new Moto());
         veiculos.add(new Lancha());
         veiculos.add(new Carro());
-        
-        for (Veiculo veiculo : veiculos){
-            if (veiculo instanceof Carro){
-                ((Carro) veiculo).buzinar();
+        for (Veiculo veiculoAuxiliar : veiculos){
+            if (veiculoAuxiliar instanceof Carro){
+                ((Carro) veiculoAuxiliar).buzinar();
             }
         }
         
+        ArrayList lista = new ArrayList();
+        lista.add(new Veiculo());
+        lista.add(new Object());
+        lista.add(new Carro());
+        lista.add(new Integer(0));
+        lista.add("Joao");
+        for (Object object : lista){
+            System.out.println(object);
+        }
     }
 }
+
