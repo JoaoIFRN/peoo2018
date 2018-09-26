@@ -9,9 +9,12 @@ package br.edu.ifrn.peoo.heranca;
  *
  * @author joaon
  */
-public abstract class Terrestre extends Veiculo {
+public class Circulo extends Forma {
+
+    @Override
+    public void desenhar() {
+        System.out.println("Círculo desenhando");
+    }
     
-    
-    public abstract void parar(); 
     
 }

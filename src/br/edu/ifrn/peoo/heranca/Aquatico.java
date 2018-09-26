@@ -10,5 +10,10 @@ package br.edu.ifrn.peoo.heranca;
  * @author joaon
  */
 public class Aquatico extends Veiculo {
+
+    @Override
+    public void acelerar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.ifrn.peoo.heranca;
+package br.edu.ifrn.peoo.revisao.bimestre3.lista2;
 
 /**
  *
  * @author joaon
  */
-public abstract class Terrestre extends Veiculo {
-    
-    
-    public abstract void parar(); 
+public class MidiaNaoExisteException extends Exception {
+
+    public MidiaNaoExisteException() {
+        super("Mídia não existe!");
+    }
     
 }

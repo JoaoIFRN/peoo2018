@@ -9,7 +9,9 @@ package br.edu.ifrn.peoo.heranca;
  *
  * @author joaon
  */
-public class Veiculo {
+public abstract class Veiculo {
+    
+    public abstract void acelerar();
     
     private int anoFabricacao;
 

@@ -9,9 +9,8 @@ package br.edu.ifrn.peoo.heranca;
  *
  * @author joaon
  */
-public abstract class Terrestre extends Veiculo {
+public abstract class Forma {
     
-    
-    public abstract void parar(); 
+    public abstract void desenhar();
     
 }
